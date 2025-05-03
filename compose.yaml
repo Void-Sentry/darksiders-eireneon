@@ -1,0 +1,13 @@
+services:
+  eireneon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eireneon
+    restart: unless-stopped
+    networks:
+      - eireneonnet
+
+networks:
+  eireneonnet:
+    driver: bridge
