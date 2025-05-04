@@ -91,7 +91,7 @@ function FeedPage() {
         {showFollowers ? "Fechar" : "Seguidores"}
       </button>
 
-      {showFollowers && <FollowersList />}
+      {showFollowers && <FollowersList feed={feed} />}
     </div>
   );
 }

@@ -1,11 +1,11 @@
-import { useFollow } from "../hooks/useFollow";
 import { User } from "../atoms/usersAtom";
 import { PrimitiveAtom } from "jotai";
 import { useCallback } from "react";
 
-export const Profile = ({ user, atom, index, follow, unfollow, toggleFollow }: { user: User; atom: PrimitiveAtom<User[]>; index: number; follow: any; unfollow: any; toggleFollow: any }) => {
+export const Profile = ({ user, atom, index, follow, unfollow, toggleFollow, feed }: { feed: any; user: User; atom: PrimitiveAtom<User[]>; index: number; follow: any; unfollow: any; toggleFollow: any }) => {
     const actionHandler = useCallback(() => {
         user['isFollowing'] ? unfollow(user['userId']) : follow(user['userId']);
+        setTimeout(feed, 500);
         toggleFollow(atom, index);
     }, [user, atom, index, toggleFollow, unfollow, follow]);
 
