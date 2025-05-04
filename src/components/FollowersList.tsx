@@ -6,7 +6,7 @@ import { Profile } from "./Profile";
 import { Search } from "./Search";
 import { useRef } from "react";
 
-function FollowersList() {
+function FollowersList({ feed }: { feed: any; }) {
   const {
     isLoadingMoreRecommendations,
     loadMoreRecommendations,
@@ -54,6 +54,7 @@ function FollowersList() {
                 follow={follow}
                 toggleFollow={toggleFollow}
                 unfollow={unfollow}
+                feed={feed}
               />
             ))
           ) : searchQuery ? (
@@ -85,6 +86,7 @@ function FollowersList() {
               follow={follow}
               toggleFollow={toggleFollow}
               unfollow={unfollow}
+              feed={feed}
             />
           ))}
         </ul>
